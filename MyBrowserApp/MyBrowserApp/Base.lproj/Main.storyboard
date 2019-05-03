@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MyBrowserApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="oCZ-Ov-WcA">
+                                <rect key="frame" x="10" y="54" width="394" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="URL" returnKeyType="go"/>
+                            </textField>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e2y-RV-KpR">
+                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                                <items>
+                                    <barButtonItem title="←" id="Sde-zg-KJw">
+                                        <connections>
+                                            <action selector="goBack:" destination="BYZ-38-t0r" id="Pym-UE-bs2"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="→" id="Mki-fW-kTo">
+                                        <connections>
+                                            <action selector="goForward:" destination="BYZ-38-t0r" id="yg8-uF-fUl"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="yJR-BF-93S"/>
+                                    <barButtonItem systemItem="refresh" id="cFg-xB-2Gb">
+                                        <connections>
+                                            <action selector="reload:" destination="BYZ-38-t0r" id="IAz-Ny-zyX"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="faZ-LE-LVI">
+                                <rect key="frame" x="379" y="59" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RLp-nl-zsh">
+                                <rect key="frame" x="0.0" y="94" width="414" height="719"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="oCZ-Ov-WcA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="2Ni-0I-Ctr"/>
+                            <constraint firstItem="RLp-nl-zsh" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="9I6-tV-aff"/>
+                            <constraint firstItem="e2y-RV-KpR" firstAttribute="top" secondItem="RLp-nl-zsh" secondAttribute="bottom" id="Esc-Jh-q67"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oCZ-Ov-WcA" secondAttribute="trailing" constant="10" id="JSK-AY-Moh"/>
+                            <constraint firstItem="e2y-RV-KpR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="a6d-6T-lH0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="e2y-RV-KpR" secondAttribute="bottom" id="aNo-p1-s9I"/>
+                            <constraint firstAttribute="trailing" secondItem="e2y-RV-KpR" secondAttribute="trailing" id="fn9-IL-GW1"/>
+                            <constraint firstItem="faZ-LE-LVI" firstAttribute="centerY" secondItem="oCZ-Ov-WcA" secondAttribute="centerY" id="g7u-3D-E7S"/>
+                            <constraint firstItem="RLp-nl-zsh" firstAttribute="top" secondItem="oCZ-Ov-WcA" secondAttribute="bottom" constant="10" id="nvT-3O-BfJ"/>
+                            <constraint firstItem="oCZ-Ov-WcA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="qgI-JX-Zn6"/>
+                            <constraint firstItem="oCZ-Ov-WcA" firstAttribute="trailing" secondItem="faZ-LE-LVI" secondAttribute="trailing" constant="5" id="qiT-8t-aNG"/>
+                            <constraint firstItem="RLp-nl-zsh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="vVj-kA-cMR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="backButton" destination="Sde-zg-KJw" id="djg-hn-LE7"/>
+                        <outlet property="browserActivityIndicatorView" destination="faZ-LE-LVI" id="7QV-o6-1Ew"/>
+                        <outlet property="browserWebView" destination="RLp-nl-zsh" id="Xfs-yI-NWZ"/>
+                        <outlet property="forwardButton" destination="Mki-fW-kTo" id="DqV-DJ-Q3l"/>
+                        <outlet property="reloadButton" destination="cFg-xB-2Gb" id="t75-Ec-lLX"/>
+                        <outlet property="urlTextField" destination="oCZ-Ov-WcA" id="kYJ-op-8jT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
